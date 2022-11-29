@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "StudentList";
+}
+
+<h1>StudentList</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Student Rollno</th>
+        <th>Student Name</th>
+        <th>Faculty</th>
+        <th>Sub1</th>
+        <th>Sub2</th>
+        <th>Per</th>
+        
+    </tr>
+    @foreach (Student s in (IEnumerable<Student>)ViewData["studentlist"])
+    {
+        <tr>
+            <td>@s.Rollno</td>
+            <td>@s.Name</td>
+            <td>@s.Faculty</td>
+            <td>@s.Sub1</td>
+            <td>@s.Sub2</td>
+            <td>@s.Per</td>
+        </tr>
+    }
+</table>
+<h3>Using View Bag</h3>
+<table class="table table-bordered"
+<tr>
+    <th>Student Rollno</th>
+    <th>Student Name</th>
+       <th>Faculty</th>
+       <th>Sub1</th>
+        <th>Sub2</th>
+        <th>Per</th>
+   </tr>
+    @foreach (Student s in ViewBag.studentList)
+    {
+                   <tr>
+                            <td>@s.Rollno</td>
+                <td>@s.Name</td>
+                <td>@s.Faculty</td>
+                <td>@s.Sub1</td>
+                <td>@s.Sub2</td>
+               <td>@s.Per</td>
+                   </tr>
+    }
+    </table>
+
